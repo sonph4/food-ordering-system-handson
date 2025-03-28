@@ -1,0 +1,16 @@
+Run the command following the order below
+1. Start Zookeeper
+    docker-compose -f common.yml -f zookeeper.yml up
+2. Check if zookeeper is running.
+    echo ruok | nc localhost 2181
+3. Start Kafka Cluster
+    docker-compose -f common.yml -f kafka_cluster.yml up
+4. Create topic for kafka
+    docker-compose -f common.yml -f init_kafka.yml up
+5. Add cluster to the UI with: Open localhost:9000
+    name: food-ordering-system-cluster and
+    cluster zookeeper host: zookeeper:2181
+
+ 6. Use KCat to check the request in the broker.
+    kcat -C -b localhost:19092 -t payment-request
+
