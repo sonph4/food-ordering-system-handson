@@ -17,7 +17,7 @@ public class Payment extends AggregateRoot<PaymentId> {
     private final OrderId orderId;
     private final CustomerId customerId;
     private final Money price;
-    private PaymentStatus status;
+    private PaymentStatus paymentStatus;
     private ZonedDateTime createdAt;
 
     private Payment(Builder builder) {
@@ -25,7 +25,7 @@ public class Payment extends AggregateRoot<PaymentId> {
         orderId = builder.orderId;
         customerId = builder.customerId;
         price = builder.price;
-        status = builder.status;
+        paymentStatus = builder.status;
         createdAt = builder.createdAt;
     }
 
@@ -45,7 +45,7 @@ public class Payment extends AggregateRoot<PaymentId> {
     }
 
     public void updateStatus(PaymentStatus status) {
-        this.status = status;
+        this.paymentStatus = status;
     }
 
     public OrderId getOrderId() {
@@ -62,8 +62,8 @@ public class Payment extends AggregateRoot<PaymentId> {
         return price;
     }
 
-    public PaymentStatus getStatus() {
-        return status;
+    public PaymentStatus getPaymentStatus() {
+        return paymentStatus;
     }
 
     public ZonedDateTime getCreatedAt() {
