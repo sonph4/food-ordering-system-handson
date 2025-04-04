@@ -19,7 +19,7 @@ public class OrderApprovalOutboxMessage {
     private UUID sagaId;
     private ZonedDateTime createdAt;
     @Setter
-    private ZonedDateTime processAt;
+    private ZonedDateTime processedAt;
     private String type;
     private String payload;
     @Setter
