@@ -27,6 +27,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         return customerJpaRepository.findById(customerId).map(customerDataAccessMapper::customerEntityToCustomer);
     }
 
+    //Implement save customer from customer service.
     @Transactional
     @Override
     public Customer save(Customer customer) {

@@ -4,6 +4,7 @@ import com.food.ordering.system.domain.entity.AggregateRoot;
 import com.food.ordering.system.domain.valueobject.CustomerId;
 
 public class Customer extends AggregateRoot<CustomerId> {
+    //Customer following CQRS
     private String username;
     private String firstName;
     private String lastName;
